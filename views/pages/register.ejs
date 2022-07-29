@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <link rel="stylesheet" href="assets/css/register.css">
+    <%- include('../partials/head'); %>
+</head>
+
+<script>  
+  function matchPassword() {  
+    var pw1 = document.getElementById("pw1").value;  
+    var pw2 = document.getElementById("pw2").value;  
+
+    if(pw1!=pw2)  
+    {   
+      event.preventDefault();
+      alert("Passwords did not match"+pw1+" "+pw2);  
+    }
+  }  
+  </script>  
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <section class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <form id="form1" class="h-100 h-custom gradient-custom-2" action="/register" method="POST">
+                                <div class="container py-5 h-100">
+                                  <div class="row d-flex justify-content-center align-items-center h-100">
+                                    <h3>Already registered? <a href="/login">Login</a> </h3>
+                                    <div class="col-12">
+                                      <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                                        <div class="card-body p-0">
+                                          <div class="row g-0">
+                                            <div class="col-lg-6">
+                                              <div class="p-5">
+                                                <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+                              
+                                                <div class="row">
+                                                  <div class="col-md-6 mb-4 pb-2">
+                              
+                                                    <div class="form-outline">
+                                                      <input type="text" id="form3Examplev2" class="form-control form-control-lg" required="" name="firstname" />
+                                                      <label class="form-label" for="form3Examplev2">First name</label>
+                                                    </div>
+                              
+                                                  </div>
+                                                  <div class="col-md-6 mb-4 pb-2">
+                              
+                                                    <div class="form-outline">
+                                                      <input type="text" id="form3Examplev3" class="form-control form-control-lg" required="" name="lastname"/>
+                                                      <label class="form-label" for="form3Examplev3">Last name</label>
+                                                    </div>
+                              
+                                                  </div>
+                                                </div>
+
+                                                <div class="row">
+                                                  <div class="col-md-6 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                      <input type="text" id="form3Examplev2" class="form-control form-control-lg" required="" name="fathername" />
+                                                      <label class="form-label" for="form3Examplev6">Father's name</label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-md-6 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                      <input type="text" id="form3Examplev3" class="form-control form-control-lg" required="" name="mothername"/>
+                                                      <label class="form-label" for="form3Examplev6">Mother's name</label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-md-6 mb-4 pb-2">
+                                                    <div class="form-outline">
+                                                      <select id="year" name="year" required="">
+                                                        <option value="2022">2022</option>
+                                                        <option value="2021">2021</option>
+                                                        <option value="2020">2020</option>
+                                                        <option value="2019">2019</option>
+                                                        <option value="Other">Other</option>
+                                                      </select>
+                                                      <label for="cars">Class XII Passing Year</label>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-6 mb-4 pb-2">
+                                                  <div class="form-outline">
+                                                    <select id="medium" name="medium" required="">
+                                                      <option value="English">English</option>
+                                                      <option value="Assamese">Assamese</option>
+                                                      <option value="Other">Other</option>
+                                                    </select>
+                                                    <label for="medium">Medium</label>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-6 mb-4 pb-2">
+                                                  <div class="form-outline">
+                                                    <select id="medium" name="aspirant" required="">
+                                                      <option value="NEET">NEET</option>
+                                                      <option value="JEE">JEE</option>
+                                                      <option value="Other">Other</option>
+                                                    </select>
+                                                    <label for="medium">Aspirant</label>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="row">
+                                                <div class="col-md-6 mb-4 pb-2">
+                                                  <div class="form-outline">
+                                                    <input type="text" id="form3Examplev3" class="form-control form-control-lg" required="" name="schoolname"/>
+                                                      <label class="form-label" for="form3Examplev6">School name(HS)</label>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                            <div class="col-lg-6 bg-indigo text-white">
+                                              <div class="p-5">
+                                                <h3 class="fw-normal mb-5">Contact Details</h3>
+                              
+                                                <div class="mb-4 pb-2">
+                                                  <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea2" class="form-control form-control-lg" required="" name="street"/>
+                                                    <label class="form-label" for="form3Examplea2">Street/Village</label>
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="mb-4 pb-2">
+                                                  <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea3" class="form-control form-control-lg" required="" name="locality"/>
+                                                    <label class="form-label" for="form3Examplea3">Landmark/Locality</label>
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="row">
+                                                  <div class="col-md-5 mb-4 pb-2">
+                              
+                                                    <div class="form-outline form-white">
+                                                      <input type="text" id="form3Examplea4" class="form-control form-control-lg" required="" name="pincode"/>
+                                                      <label class="form-label" for="form3Examplea4">Pin Code</label>
+                                                    </div>
+                              
+                                                  </div>
+                                                  <div class="col-md-7 mb-4 pb-2">
+                              
+                                                    <div class="form-outline form-white">
+                                                      <input type="text" id="form3Examplea5" class="form-control form-control-lg" required="" name="district"/>
+                                                      <label class="form-label" for="form3Examplea5">District</label>
+                                                    </div>
+                              
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="mb-4 pb-2">
+                                                  <div class="form-outline form-white">
+                                                    <input type="text" id="form3Examplea6" class="form-control form-control-lg" required="" name="phone"/>
+                                                    <label class="form-label" for="form3Examplea6">Phone Number</label>
+                                                  </div>
+                                                </div>  
+                                                <div class="row">
+                                                  <div class="col-md-5 mb-4 pb-2">
+                                                    <div class="form-outline form-white">
+                                                      <input type="text" id="pw1" class="form-control form-control-lg" required="" name="password" required=""  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+                                                      <label class="form-label" for="form3Examplea6">Choose a password</label>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-md-7 mb-4 pb-2">
+                                                    <div class="form-outline form-white">
+                                                      <input type="text" id="pw2" class="form-control form-control-lg" required="" name="passwordconf" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+                                                      <label class="form-label" for="form3Examplea8">Confirm your password</label>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="mb-4">
+                                                  <div class="form-outline form-white">
+                                                    <input type="email" id="form3Examplea9" class="form-control form-control-lg"  required="" name="email"/>
+                                                    <label class="form-label" for="form3Examplea9">Your Email(Your email ID will be your login userID)</label>
+                                                  </div>
+                                                </div>
+                              
+                                                <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                                                  <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" required="" />
+                                                  <label class="form-check-label text-white" for="form2Example3">
+                                                    All the information provided are true.
+                                                  </label>
+                                                </div>
+                              
+                                                <button onclick="matchPassword(event)" type="submit" class="btn btn-light btn-lg"
+                                                  data-mdb-ripple-color="dark">Register</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="footer-wrappper footer-bg">
+           <%- include('../partials/footer'); %>
+         </div>
+    </footer> 
+    <!-- Scroll Up -->
+    <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+   </div>
+   
+   <%- include('../partials/footer-script'); %>
+</body>
+</html>
+
+<script>
+  function myFunction() {
+    if(message.length>0)
+    alert(message[0]);
+  }
+</script>

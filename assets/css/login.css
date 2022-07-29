@@ -1,0 +1,33 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.gradient-custom-x {
+    /* fallback for old browsers */
+    background: transparent;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgb(38, 113, 233), rgb(200, 213, 219));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(36, 101, 206), rgb(186, 198, 204))
+}
+
+@media (min-width: 900px) {
+    .gradient-custom-x {
+    margin-top: 12%;
+    height:70vh !important;
+    }
+    }

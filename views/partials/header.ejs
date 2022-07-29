@@ -1,0 +1,70 @@
+<!-- ? Preloader Start -->
+<div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+            <div class="preloader-circle"></div>
+            <div class="preloader-img pere-text">
+                <img src="../../assets/img/logo/loder.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-area header-transparent">
+    <div class="main-header ">
+        <div class="header-bottom  header-sticky">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!-- Logo -->
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo">
+                            <a href="../pages/index.ejs"><img src="../../assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-xl-10 col-lg-10">
+                        <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                            <!-- Main-menu -->
+                            <div class="main-menu d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">                                                                                          
+                                        <li class="active" ><a href="/">Home</a></li>
+                                        <li><a href="/resource">Resources</a></li>
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="#">Notice</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog.html">Blog</a></li>
+                                                <li><a href="blog_details.html">Blog Details</a></li>
+                                                <li><a href="elements.html">Element</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="https://api.whatsapp.com/send?phone=917576023423">Chat with us &nbsp;
+                                            <i class="fa fa-whatsapp"></i>
+                                        </a></li>
+                                        <li><a href="tel:9876543210">Call &nbsp;
+                                            <i class="fas fa-phone "></i>
+                                        </a></li>
+                                        <% if(sessionId==1) { %>
+                                            <li><a href="/admin">Admin</a></li>
+                                        <%} %>
+                                       
+                                        <!-- Button -->
+                                        <% if(sessionId!=undefined && sessionId==0) {%>
+                                        <li class="button-header margin-left "><a href="/register" class="btn">Register</a></li>
+                                        <li class="button-header"><a href="/login" class="btn btn3">Log in</a></li>
+                                        <%} else  {%>
+                                            <li class="button-header"><a href="/logout" class="btn btn3">Logout</a></li>
+                                        <%} %>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

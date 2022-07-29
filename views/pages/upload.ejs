@@ -1,0 +1,97 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+    </style>
+    <header>
+        <%- include('../partials/header',{sessionId:sessionId}); %>
+    </header>
+
+    <main>
+        <!--? slider Area Start-->
+        <section class="slider-area slider-area2">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-11 col-md-12">
+                                <div class="hero__caption hero__caption2">
+                                    <h1 data-animation="bounceIn" data-delay="0.2s">Admin Section</h1>
+                                    <!-- breadcrumb Start-->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/upload">Upload</a></li> 
+                                        </ol>
+                                    </nav>
+                                    <!-- breadcrumb End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </section> 
+        <section class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <form action="/upload" method="POST">
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <select name="course" required="">
+                                        <option value="NEET">NEET</option>
+                                        <option value="JEE">JEE</option>
+                                        <option value="XII">XII</option>
+                                        <option value="XI">XI</option>
+                                        <option value="X">X</option>
+                                        <option value="IX">IX</option>
+                                        <option value="VIII">VIII</option>
+                                      </select>
+                                      <label for="cars">Select Course</label>
+                                </div>
+                                <!-- Password input -->
+                                <div class="form-outline mb-3">
+                                  <input type="text" id="form3Example4" class="form-control form-control-lg"
+                                    placeholder="Enter description" name="description"/>
+                                  <label class="form-label" for="form3Example4">Description</label>
+                                </div> 
+                                <div class="form-outline mb-3">
+                                    <input type="url" id="form3Example4" class="form-control form-control-lg"
+                                      placeholder="Enter drive link" name="link"/>
+                                    <label class="form-label" for="form3Example4">Enter drive link</label>
+                                  </div>                  
+                                <button type="submit" class="btn btn-primary btn-lg"
+                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Upload</button>
+                              </form>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+     <div class="footer-wrappper footer-bg">
+        <%- include('../partials/footer'); %>
+      </div>
+  </footer> 
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<%- include('../partials/footer-script'); %>
+
+</body>
+</html>

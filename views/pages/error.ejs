@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <!--? slider Area Start-->
+        <section class="slider-area ">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                <%   if (message)      { %>
+                                        <h3>Registration denide due to: </h3>
+                                      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong><%=  message  %></strong>
+                                      </div> 
+                                      <li><a href="/register" class="btn">Go Back</a></li>
+                                  <% }    %>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+     <div class="footer-wrappper footer-bg">
+        <%- include('../partials/footer'); %>
+      </div>
+  </footer> 
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<%- include('../partials/footer-script'); %>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+    </style>
+    <header>
+        <%- include('../partials/header',{sessionId:items.sessionId}); %>
+    </header>
+
+    <main>
+        <!--? slider Area Start-->
+        <section class="slider-area slider-area2">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-11 col-md-12">
+                                <div class="hero__caption hero__caption2">
+                                    <h1 data-animation="bounceIn" data-delay="0.2s">Admin Section</h1>
+                                    <!-- breadcrumb Start-->
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="/upload">Upload</a></li> 
+                                        </ol>
+                                    </nav>
+                                    <!-- breadcrumb End -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </section> 
+        <div class="container student">
+            <h1 style="text-align: center;">Student Enrolled Data</h1>
+            <%if (items.length > 0) {%>
+            <div class="row">
+                <table style="width:100%">
+                    <tr>
+                        <th>ID</th><th>Name</th><th>Course</th><th>Phone</th><th>Email</th>
+                    </tr>
+                    <%for (let item of items) {%>
+    
+                        <tr>
+                            <td><%= item.unique_id%></td>
+                            <td><%= item.firstname%></td>
+                            <td><%= item.aspirant%></td>
+                            <td><%= item.phone%></td>
+                            <td><%= item.email%></td>
+                        </tr>
+                    <%}%>
+                </table>
+            </div>
+            <%} else {%>
+            <div class="text-center">
+                <h5>No data found.</h5>
+                <div class="mt-4">
+                    <a href="/" class="btn " style="color: wheat;">Go Home</a>
+                </div>
+            </div>
+            <%}%>
+        </div>
+    </main>
+    <footer>
+     <div class="footer-wrappper footer-bg">
+        <%- include('../partials/footer'); %>
+      </div>
+  </footer> 
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<%- include('../partials/footer-script'); %>
+
+</body>
+</html>

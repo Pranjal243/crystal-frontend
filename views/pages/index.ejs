@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header',{sessionId:sessionId})%>
+    </header>
+    <main>
+        <section class="slider-area ">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <marquee width="80%" direction="left" height="100px">
+                            **Online resources and study materials will be available soon and only enrolled students will be having the access to the online resources **
+                            </marquee>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                <div class="hero__caption">
+                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">Crystal Coaching<br> Dhakuakhana</h1>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">Prepare for NEET JEE-MAIN and JEE Advanced along with instructors from NITs and top universities</p>
+                                    <a href="/register" class=" btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Enroll today</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+     <div class="footer-wrappper footer-bg">
+        <%- include('../partials/footer'); %>
+      </div>
+  </footer> 
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<%- include('../partials/footer-script'); %>
+
+</body>
+</html>
