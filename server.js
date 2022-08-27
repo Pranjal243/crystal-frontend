@@ -60,9 +60,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/views'));
 
 app.get('/', function(req, res,next) {
-if(req.session.userId!=undefined)
-        sessionId=req.session.userId;
-console.log("SessionID"+ sessionId);
 res.render('pages/index', {sessionId:sessionId});
 });
 
@@ -83,6 +80,12 @@ if(req.session.userId!=undefined)
 sessionId=req.session.userId;
 res.render('pages/login', {sessionId:sessionId});
 });
+
+// app.get('/error', function(req, res) {
+// if(req.session.userId!=undefined)
+// sessionId=req.session.userId;
+// res.render('pages/error', {sessionId:sessionId});
+// });
 
 app.get('/admin', function(req, res) {
 if(req.session.userId!=undefined)
@@ -168,14 +171,14 @@ app.post('/register', function(req, res, next) {
                                   }).sort({_id: -1}).limit(1);
                                   res.redirect("/login");
                           }else{
-                                  return res.render('pages/error', {message: "Phone number is already registered"})
+                                  return res.render('pages/error', {message: "Registration denied because Phone number is already registered"})
                           }
 
                   });
           }else{
                 
                 //res.send({"Success":"Password not matched"});
-                return res.render('pages/error', {message: "Password not matched"})
+                return res.render('pages/error', {message: "Registration denied because Password not matched",sessionId:sessionId})
         }
   }
 });
@@ -198,10 +201,10 @@ app.post('/login', function (req, res, next) {
                                 res.render('pages/index', {sessionId:sessionId});
 
                         }else{
-                                res.send({"Success":"Wrong password!"});
+                                return res.render('pages/error', {message: "Wrong Password, login denied",sessionId:sessionId})
                         }
                 }else{
-                        res.send({"Success":"This email Is not regestered!"});
+                        return res.render('pages/error', {message: "This email is not registered",sessionId:sessionId})
                 }
         });
 });
@@ -283,7 +286,7 @@ Resource.find().countDocuments().then(numberOfResources => {
                         category:category
                 });
         }else{
-                res.send("You must be signed in to view resources");
+                return res.render('pages/error', {message: "You must be signed in to view resources.", sessionId:sessionId});
         }
 
 }).catch(err => {
