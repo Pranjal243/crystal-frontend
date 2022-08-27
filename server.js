@@ -93,15 +93,14 @@ sessionId=req.session.userId;
 User.find({}, (err,items) => {
         if(err) {
                 console.log(err);
-                res.status(500).send('An error occurred', err);
+                return res.render('pages/error', {message: "Internal error, please try later"})
         }
         else {
                 if(req.session.userId==1)
                 {
                         items.sessionId=sessionId;
                         res.render('pages/admin', {items:items});
-                }
-                        
+                }    
                 else
                 return res.render('pages/error', {message: "Authentication denied"})
 
