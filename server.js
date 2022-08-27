@@ -103,7 +103,7 @@ User.find({}, (err,items) => {
                 }
                         
                 else
-                        res.send("You must be admin to visit this page.")
+                return res.render('pages/error', {message: "Authentication denied"})
 
         }
 })
@@ -192,7 +192,6 @@ app.post('/login', function (req, res, next) {
                         //      // role=true;
                         // else
                                 // role=false;
-
                         if(bcrypt.compareSync(req.body.password,data.password)){
                                 console.log(req.session);
                                 req.session.userId=data.unique_id;
