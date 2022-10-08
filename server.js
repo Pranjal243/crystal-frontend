@@ -292,7 +292,7 @@ Resource.find().countDocuments().then(numberOfResources => {
 })
 })
 
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3032;
 app.listen(PORT, function () {
   console.log('Server is started on http://127.0.0.1:'+PORT);
 });
